@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { getPosts, updatePost } from "../../services/posts";
-// import Post from "../../components/Post";
 import CreatePostForm from "../../components/CreatePostForm";
 import { getAllUsers } from "../../services/users";
 import { getUser } from "../../services/users";
 import UserProfile from "../../components/UserProfile";
 import { NavbarComponent } from "../../components/NavbarComponent";
 import AllPosts from "../../components/AllPosts";
-import { UploadProfilePic } from "../../components/uploadProfilePicture";
+
 
 export function FeedPage() {
   const [users, setUsers] = useState([]);
