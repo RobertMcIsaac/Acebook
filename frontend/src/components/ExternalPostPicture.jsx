@@ -45,11 +45,10 @@ const ExternalPostPicture = () => {
     }};
 
 
-
     return (
     <Form onSubmit={handleSubmit}>
     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Upload Picture</Form.Label>
+        <Form.Label className="fw-bold">Upload Picture</Form.Label>
         <Form.Control
         onChange={handlePictureChange}
         accept="image/*"
@@ -58,34 +57,36 @@ const ExternalPostPicture = () => {
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Enter Picture Title</Form.Label>
+        <Form.Label className="fw-bold">Enter Picture Title</Form.Label>
         <Form.Control
         as="textarea"
         rows={3}
         onChange={handleTitleChange}
         value={title}
-        className="message-box"
+        className=""
         name="message"
         placeholder="Your picture title..."
         />
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Enter Picture Alt-text</Form.Label>
+        <Form.Label className="fw-bold">Enter Picture Alt-text</Form.Label>
         <Form.Control
         as="textarea"
         rows={3}
         onChange={handleAlttextChange}
         value={alttext}
-        className="message-box"
+        className=""
         name="message"
         placeholder="Your picture alt-text..."
         />
     </Form.Group>
-
+    
+    <div className="d-flex justify-content-center">
     <Button value="Submit" variant="primary" type="submit" disabled={uploading}>
         {uploading ? "Uploading..." : "Submit"}
     </Button>
+    </div>
 
     </Form>
     );

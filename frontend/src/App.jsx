@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/createpost",
-    element: <PostPicture />, // route to a page simply containing CreatePostForm - needs more functionality, but what?
+    element: <PostPicture />, // route to a page simply containing CreatePostForm
   },
   {
     path: "/users/me",

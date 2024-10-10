@@ -41,13 +41,14 @@ export function UploadProfilePic () {
         <>
 <Form onSubmit={handleSubmit}>
 <Form.Group className="mb-3" controlId="formBasicUsername">
-<Form.Label>Change Profile Picture</Form.Label>
+<Form.Label className="fw-bold">Change Profile Picture</Form.Label>
+<InputGroup>
 <Form.Control
 type="file"
 accept="image/*"
 onChange={handlePictureChange}
 />
-</Form.Group>
+
 <Button
         role="submit-button"
         id="submit"
@@ -57,6 +58,8 @@ onChange={handlePictureChange}
         >
         {uploading ? "Uploading..." : "Submit"}
         </Button>
+        </InputGroup>
+        </Form.Group>
     </Form>
     </>
 );

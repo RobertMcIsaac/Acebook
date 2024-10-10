@@ -93,7 +93,7 @@ const AllPosts = ({ refresh, ...props }) => {
     const currentUsersPosts = posts.filter((post) => post.author._id === props.user._id)
     return (
       <div className="feed" role="feed">
-        <button onClick={handleReverse}>
+        <button className="reverse-btn p-2 mt-2" onClick={handleReverse}>
           {reverseStatus? "See newest first": "See oldest first"}  
         </button>
         {currentUsersPosts.map((post) => (
