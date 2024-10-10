@@ -1,4 +1,5 @@
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export async function getPictures(token) {
     const requestOptions = {
@@ -49,7 +50,7 @@ export async function uploadToImgBB(file) {
         const formPayload = new FormData();
         formPayload.append("image", file);
     
-        const apiKey = "da3d35a0fd6ae108d0d46db5514baae0"; // NEW KEY IN SLACK CHANNEL
+        const apiKey = API_KEY;
         const expiration = 6000000;
         const apiUrl = `https://api.imgbb.com/1/upload?expiration=${expiration}&key=${apiKey}`;
     
