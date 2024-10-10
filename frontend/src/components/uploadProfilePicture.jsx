@@ -4,6 +4,8 @@ import { UpdateUser } from "../services/users";
 import { uploadToImgBB } from "../services/pictures";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+
 
 export function UploadProfilePic () {
     const [pictureFile, setPictureFile] = useState(null);
@@ -57,5 +59,5 @@ onChange={handlePictureChange}
         </Button>
     </Form>
     </>
-    )
+  );
 }
