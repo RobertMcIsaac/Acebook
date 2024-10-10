@@ -56,20 +56,6 @@ const AllPosts = ({ refresh, ...props }) => {
     }
   };
 
-   // let displayPosts; // this may cause problems
-  // // Change postFilter to all for all posts/ curretnUser for curren user's posts
-  // if (props.postFilter === "currentUser") {
-  //   displayPosts = posts.filter((post) => post.author._id == props.user._id);
-  // } else {
-  //   displayPosts = posts;
-  // }
-
-  // if (postReverse) {
-  //   displayPosts = displayPosts.reverse();
-  //   console.log("displayPosts", displayPosts);
-  // }
-
-
   if (props.postFilter === "all") {
     return (
       <div className="feed" role="feed">
