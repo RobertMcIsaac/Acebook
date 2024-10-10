@@ -49,7 +49,7 @@ export async function uploadToImgBB(file) {
         const formPayload = new FormData();
         formPayload.append("image", file);
     
-        const apiKey = "da3d35a0fd6ae108d0d46db5514baae0";
+        const apiKey = "da3d35a0fd6ae108d0d46db5514baae0"; // NEW KEY IN SLACK CHANNEL
         const expiration = 6000000;
         const apiUrl = `https://api.imgbb.com/1/upload?expiration=${expiration}&key=${apiKey}`;
     

@@ -53,11 +53,11 @@ onChange={handlePictureChange}
         id="submit"
         variant="primary"
         type="submit"
-        value="Submit"
+        disabled={uploading}
         >
-        Submit
+        {uploading ? "Uploading..." : "Submit"}
         </Button>
     </Form>
     </>
-  );
+);
 }
