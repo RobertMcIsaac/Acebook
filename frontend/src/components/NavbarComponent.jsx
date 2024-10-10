@@ -13,7 +13,7 @@ export function NavbarComponent() {
           <Nav className="me-auto">
             <Nav.Link className="m-2" href="/posts">Home</Nav.Link>
             <Nav.Link className="m-2" href="/users/me">Profile</Nav.Link>
-            <Nav.Link className="m-2" href="/createpost">Create Post</Nav.Link>
+            <Nav.Link className="m-2" href="/createpost">Share an Image</Nav.Link>
             <Nav.Link className="m-2" href="/viewAllUsers">View All Users</Nav.Link>
             {/* Added update page to navbar*/}
           </Nav>
