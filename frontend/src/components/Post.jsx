@@ -11,6 +11,7 @@ import LikeButton from "./LikeButton";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 
@@ -80,6 +81,9 @@ function Post(props) {
           <Card.Body>
             <Row>
               <Col sm={3} className="text-center">
+              <ListGroup.Item className="post-metadata fw-bold">
+                <h6>{props.post.author ? props.post.author.username : "Unknown User"}</h6> 
+              </ListGroup.Item>
                 <Card.Img
                   variant="top"
                   src={props.post.userPic}
@@ -95,19 +99,16 @@ function Post(props) {
 
           <Row className="align-items-center">
             <Col sm={6} className="text-center text-sm-start">
-              <ListGroup.Item className="post-metadata">
-                <span>Posted By: {props.post.author ? props.post.author.username : "Unknown User"}</span> 
-              </ListGroup.Item>
             </Col>
             <Col sm={6} className="text-end">
               <ListGroup.Item className="post-metadata">
-                <span>on {formatDate(props.post.createdAt)}</span>
+                <span>Posted on {formatDate(props.post.createdAt)}</span>
               </ListGroup.Item>
             </Col>
           </Row>
 
           <Card.Footer className="text-muted">
-            <ListGroup.Item className="post-metadata d-flex align-items-center">
+            <ListGroup.Item className="post-metadata d-flex align-items-center justify-content-center">
               <LikeButton
                 className=""
                 post={props.post}
@@ -119,26 +120,27 @@ function Post(props) {
           </Card.Footer>
 
           <Form onSubmit={handleSubmit}>
-            <Row>
-              <Col sm={10}>
-                <Form.Group className="mb-3" controlId="message-box">
-                  <Form.Control
-                    as="textarea"
-                    rows={2}
-                    onChange={handleCommentChange}
-                    onClick={handleClick}
-                    value={comment}
-                    name="comment"
-                    placeholder="Your comment..."
-                  />
-                </Form.Group>
-              </Col>
-              <Col sm={2} className="d-flex align-items-center justify-content-end">
-                <Button className="btn-sm" value="Submit" variant="primary" type="submit">
+            <Form.Group className="mb-3" controlId="message-box">
+              <InputGroup>
+                <Form.Control
+                  as="textarea"
+                  rows={2}
+                  onChange={handleCommentChange}
+                  onClick={handleClick}
+                  value={comment}
+                  name="comment"
+                  placeholder="Your comment..."
+                />
+                <Button
+                  className="btn-sm"
+                  value="Submit"
+                  variant="primary"
+                  type="submit"
+                >
                   Submit
                 </Button>
-              </Col>
-            </Row>
+              </InputGroup>
+            </Form.Group>
           </Form>
 
           <Card.Body>

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'; // Filled heart
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 // import { updatePost } from "../services/posts";
 
 const LikeButton = (props) => {
@@ -17,8 +20,17 @@ const LikeButton = (props) => {
     }
     
     return (
-        <button onClick={handleToggleLike}>
-            {isLiked? "Unlike": "Like"} {/* display like or unlike depending on like status */}
+        <button 
+            onClick={handleToggleLike}
+            className="border-0 bg-transparent"
+            style={{ cursor: "pointer" }}
+        >
+        {/* {isLiked? "Unlike": "Like"} display like or unlike depending on like status */}
+        <FontAwesomeIcon 
+            icon={isLiked ? solidHeart : regularHeart} 
+            size="lg" 
+            style={{ color: isLiked ? "red" : "gray", transition: "color 0.3s ease" }} 
+        />
         </button>
     )
 };
