@@ -27,7 +27,7 @@ export function AllUsersPage() {
   return (
     <>
       <NavbarComponent />
-      <h2>All User Profiles</h2>
+      <h2 className="mt-4">All User Profiles</h2>
       <div>
         {users.map((user, index) => (
           <UserProfile user={user} key={index} />

@@ -48,3 +48,9 @@ h1 {
   width: 150px;
   height: 150px;
   object-fit: contain;}
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    
+  }
