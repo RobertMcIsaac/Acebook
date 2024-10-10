@@ -1,27 +1,39 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UpdateUser } from "../services/users";
+import { uploadToImgBB } from "../services/pictures";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
 
 export function UploadProfilePic () {
-    const [imgURL, setimgURL] = useState("");
+    const [pictureFile, setPictureFile] = useState(null);
+    const [uploading, setUploading] = useState(false);
     const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
         const payload = {};
+        if (!pictureFile) {
+            alert("Select an image, bro...");
+            return;
+        }
+        setUploading(true);
+
         try {
+            const imgURL = await uploadToImgBB(pictureFile);
             payload.imgURL  = imgURL;
-            UpdateUser(payload);
+            await UpdateUser(payload);
             navigate('/users/me');
-        } catch (err) {
-            console.log(err);
+        } catch (error) {
+            console.error("Image Upload Failed!", error);
             navigate(0);
+        } finally {
+            setUploading(false);
         }
     }
-    function handleImgURLChange(event) {
-        setimgURL(event.target.value);
+
+    function handlePictureChange(event) {
+        setPictureFile(event.target.files[0]);
     }
     return (
         <>
@@ -29,10 +41,9 @@ export function UploadProfilePic () {
 <Form.Group className="mb-3" controlId="formBasicUsername">
 <Form.Label>Change Profile Picture</Form.Label>
 <Form.Control
-type="text"
-value={imgURL}
-placeholder="Enter image URL"
-onChange={handleImgURLChange}
+type="file"
+accept="image/*"
+onChange={handlePictureChange}
 />
 </Form.Group>
 <Button

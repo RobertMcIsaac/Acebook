@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const PictureSchema = new mongoose.Schema({
-    URL: String, 
+    url: String, 
     title: String, 
     alttext: String,
     user: String,
