@@ -81,8 +81,8 @@ function Post(props) {
           <Card.Body>
             <Row>
               <Col sm={3} className="text-center">
-              <ListGroup.Item className="post-metadata fw-bold">
-                <h6>{props.post.author ? props.post.author.username : "Unknown User"}</h6> 
+              <ListGroup.Item>
+              <h6 className="fw-bold mt-1">{props.post.author ? props.post.author.username : "Unknown User"}</h6> 
               </ListGroup.Item>
                 <Card.Img
                   variant="top"
