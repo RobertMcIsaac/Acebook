@@ -27,8 +27,8 @@ export function AllUsersPage() {
   return (
     <>
       <NavbarComponent />
-      <h2>All User Profiles</h2>
-      <div>
+      <h1 className="my-4 text-center">Acebook Users</h1>
+      <div className="mb-5">
         {users.map((user, index) => (
           <UserProfile user={user} key={index} />
         ))}
@@ -36,5 +36,3 @@ export function AllUsersPage() {
     </>
   );
 }
-
-// export default AllUsersPage;
