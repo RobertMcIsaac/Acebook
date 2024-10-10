@@ -5,11 +5,11 @@ import { HomePage } from "./pages/Home/HomePage";
 import { LoginPage } from "./pages/Login/LoginPage";
 import { SignupPage } from "./pages/Signup/SignupPage";
 import { FeedPage } from "./pages/Feed/FeedPage";
-import { CreatePost } from "./pages/CreatePost/CreatePost";
 import { Profile } from "./pages/Profile/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { UpdateUser } from "./pages/UpdateUser/UpdateUser";
 import { AllUsersPage } from "./pages/AllUsers/AllUsersPage";
+import { PostPicture } from "./pages/CreatePost/PostPicture";
 
 // docs: https://reactrouter.com/en/main/start/overview
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/createpost",
-    element: <CreatePost />, // route to a page simply containing CreatePostForm - needs more functionality, but what?
+    element: <PostPicture />, // route to a page simply containing CreatePostForm - needs more functionality, but what?
   },
   {
     path: "/users/me",
