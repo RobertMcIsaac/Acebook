@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createComment } from "../services/comments";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/esm/Container";
+// import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
@@ -23,9 +23,9 @@ const CreateCommentForm = (props) => {
   };
 
   return (
-<Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Row>
-        <Col sm={10}> {/* This makes the textarea take 10/12 of the row */}
+        <Col sm={10}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Enter Comment: </Form.Label>
             <Form.Control
@@ -40,13 +40,13 @@ const CreateCommentForm = (props) => {
           </Form.Group>
         </Col>
 
-        <Col sm={2} className="d-flex align-items-center justify-content-end"> {/* This makes the button take the remaining 2/12 of the row */}
+        <Col sm={2} className="d-flex align-items-center justify-content-end"> 
           <Button value="Submit" variant="primary" type="submit">
             Submit
           </Button>
         </Col>
       </Row>
-      <p>{props.post._id}</p> {/* Assuming this shows the post ID */}
+      <p>{props.post._id}</p>
     </Form>
   );
 };
