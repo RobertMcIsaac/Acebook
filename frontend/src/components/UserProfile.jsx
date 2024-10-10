@@ -8,10 +8,10 @@ const UserProfile = (props) => {
 
     return (
         <>
-        <Container className="">
+        <Container>
             <ListGroup>
-            <ListGroup.Item className='m-3'>
-            <Row className="">
+            <ListGroup.Item className='pale-grey-bg m-3 shadow-sm'>
+            <Row>
                 <Col xs={3} md={3} lg={2} className="d-flex justify-content-start">
                     <Image src={props.user.imgURL} roundedCircle className='profile-picture'/>
                 </Col>

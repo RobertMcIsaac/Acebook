@@ -69,7 +69,7 @@ export function Profile() {
     <>
       <NavbarComponent />
       <h2>My Profile</h2>
-      <img src={user.imgURL}></img>
+      {/* <img src={user.imgURL}></img> */}
       <div>{user && <UserProfile user={user} key={user._id} />}</div>
       <div className="feed" role="feed">
         <h2>Posts you have submitted: </h2>
